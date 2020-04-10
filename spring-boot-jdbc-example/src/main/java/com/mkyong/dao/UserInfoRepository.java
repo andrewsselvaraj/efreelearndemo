@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 @Repository
-public class CustomerRepository {
+public class UserInfoRepository {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;

@@ -13,7 +13,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.mkyong.dao.CustomerRepository;
+import com.mkyong.dao.UserInfoRepository;
 import com.mkyong.model.UserInfo;
 
 @SpringBootApplication
@@ -23,7 +23,7 @@ public class SpringBootConsoleApplication implements CommandLineRunner {
     DataSource dataSource;
 
     @Autowired
-    private CustomerRepository customerRepository;
+    private UserInfoRepository customerRepository;
 
     public static void main(String[] args) throws Exception {
         SpringApplication.run(SpringBootConsoleApplication.class, args);
