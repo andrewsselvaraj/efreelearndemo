@@ -14,7 +14,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.mkyong.dao.CustomerRepository;
-import com.mkyong.model.Customer;
+import com.mkyong.model.UserInfo;
 
 @SpringBootApplication
 public class SpringBootConsoleApplication implements CommandLineRunner {
@@ -54,7 +54,7 @@ public class SpringBootConsoleApplication implements CommandLineRunner {
 
             if (args[0].equalsIgnoreCase("display")) {
                 System.out.println("Display all customers...");
-                List<Customer> list = customerRepository.findAll();
+                List<UserInfo> list = customerRepository.findAll();
                 list.forEach(x -> System.out.println(x));
             }
             System.out.println("Done!");

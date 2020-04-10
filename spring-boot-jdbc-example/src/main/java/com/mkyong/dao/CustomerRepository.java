@@ -1,6 +1,6 @@
 package com.mkyong.dao;
 
-import com.mkyong.model.Customer;
+import com.mkyong.model.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -14,11 +14,11 @@ public class CustomerRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    public List<Customer> findAll() {
+    public List<UserInfo> findAll() {
 
-        List<Customer> result = jdbcTemplate.query(
+        List<UserInfo> result = jdbcTemplate.query(
                 "SELECT pk_user_id, user_name, email_id, created_datettime FROM user_info",
-                (rs, rowNum) -> new Customer(rs.getInt("pk_user_id"),
+                (rs, rowNum) -> new UserInfo(rs.getInt("pk_user_id"),
                         rs.getString("user_name"), rs.getString("email_id"), rs.getDate("created_datettime"))
         );
 

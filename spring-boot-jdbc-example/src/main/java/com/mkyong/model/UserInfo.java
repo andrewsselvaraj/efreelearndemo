@@ -2,14 +2,14 @@ package com.mkyong.model;
 
 import java.util.Date;
 
-public class Customer {
+public class UserInfo {
 
     int id;
     String name;
     String email;
     Date date;
 
-    public Customer(int id, String name, String email, Date date) {
+    public UserInfo(int id, String name, String email, Date date) {
         this.id = id;
         this.name = name;
         this.email = email;
