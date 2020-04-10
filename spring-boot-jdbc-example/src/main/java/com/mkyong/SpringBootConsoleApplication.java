@@ -1,16 +1,20 @@
 package com.mkyong;
 
-import com.mkyong.dao.CustomerRepository;
-import com.mkyong.model.Customer;
+import static java.lang.System.exit;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+
+import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import javax.sql.DataSource;
-import java.util.List;
-
-import static java.lang.System.exit;
+import com.mkyong.dao.CustomerRepository;
+import com.mkyong.model.Customer;
 
 @SpringBootApplication
 public class SpringBootConsoleApplication implements CommandLineRunner {
@@ -37,11 +41,15 @@ public class SpringBootConsoleApplication implements CommandLineRunner {
         if (args.length <= 0) {
             System.err.println("[Usage] java xxx.jar {insert name email | display}");
         } else {
+        	
             if (args[0].equalsIgnoreCase("insert")) {
-                System.out.println("Add customer...");
+	                System.out.println("Add customer...");
                 String name = args[1];
                 String email = args[2];
-                customerRepository.addCustomer(name, email);
+                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                Date date = new Date();
+                String id = ""+date.getTime();
+                customerRepository.addCustomer(  id,  name,  email);
             }
 
             if (args[0].equalsIgnoreCase("display")) {

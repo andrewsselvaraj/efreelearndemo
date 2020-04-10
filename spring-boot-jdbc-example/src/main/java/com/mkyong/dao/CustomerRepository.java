@@ -17,19 +17,19 @@ public class CustomerRepository {
     public List<Customer> findAll() {
 
         List<Customer> result = jdbcTemplate.query(
-                "SELECT id, name, email, created_date FROM customer",
-                (rs, rowNum) -> new Customer(rs.getInt("id"),
-                        rs.getString("name"), rs.getString("email"), rs.getDate("created_date"))
+                "SELECT pk_user_id, user_name, email_id, created_datettime FROM user_info",
+                (rs, rowNum) -> new Customer(rs.getInt("pk_user_id"),
+                        rs.getString("user_name"), rs.getString("email_id"), rs.getDate("created_datettime"))
         );
 
         return result;
 
     }
 
-    public void addCustomer(String name, String email) {
-
-        jdbcTemplate.update("INSERT INTO customer(name, email, created_date) VALUES (?,?,?)",
-                name, email, new Date());
+    public void addCustomer(String id,String name, String email) {
+/*
+        jdbcTemplate.update("INSERT INTO user_info(pk_user_id,user_name, email_id, created_datettime) VALUES (?,?,?)",
+                name, email, new Date());*/
 
     }
 
