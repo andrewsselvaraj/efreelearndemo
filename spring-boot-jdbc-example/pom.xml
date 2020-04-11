@@ -17,6 +17,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+         <poi.version>3.11</poi.version>
     </properties>
 
     <dependencies>
@@ -49,6 +50,13 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.11</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>${poi.version}</version>
+            <optional>true</optional>
         </dependency>
 
     </dependencies>
