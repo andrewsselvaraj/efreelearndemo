@@ -53,7 +53,7 @@ public class SpringBootConsoleApplication implements CommandLineRunner {
             }
 
             if (args[0].equalsIgnoreCase("display")) {
-                System.out.println("Display all customers...");
+                System.out.println("Display all customers....");
                 List<UserInfo> list = customerRepository.findAll();
                 list.forEach(x -> System.out.println(x));
             }
