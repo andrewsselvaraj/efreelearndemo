@@ -1,4 +1,4 @@
-package com.mkyong.model;
+package com.efreelearn.model;
 
 import java.util.Date;
 

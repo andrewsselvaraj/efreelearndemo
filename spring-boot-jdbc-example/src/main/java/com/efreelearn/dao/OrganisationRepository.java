@@ -1,6 +1,6 @@
-package com.mkyong.dao;
+package com.efreelearn.dao;
 
-import com.mkyong.model.UserInfo;
+import com.efreelearn.model.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;

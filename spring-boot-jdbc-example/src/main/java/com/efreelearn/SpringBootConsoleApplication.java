@@ -1,4 +1,4 @@
-package com.mkyong;
+package com.efreelearn;
 
 import static java.lang.System.exit;
 
@@ -13,8 +13,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.mkyong.dao.UserInfoRepository;
-import com.mkyong.model.UserInfo;
+import com.efreelearn.dao.UserInfoRepository;
+import com.efreelearn.model.UserInfo;
 
 @SpringBootApplication
 public class SpringBootConsoleApplication implements CommandLineRunner {
