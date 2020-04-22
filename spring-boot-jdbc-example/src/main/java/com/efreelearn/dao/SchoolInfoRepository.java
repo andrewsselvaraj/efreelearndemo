@@ -8,5 +8,4 @@ import com.efreelearn.model.SchoolInfo;
 public interface SchoolInfoRepository extends JpaRepository<SchoolInfo,Integer>{
 	
   
-
 }

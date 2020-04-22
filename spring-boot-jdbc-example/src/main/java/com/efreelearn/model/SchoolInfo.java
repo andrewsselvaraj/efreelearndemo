@@ -38,6 +38,8 @@ public class SchoolInfo {
 	String lastupdatedby;
 	@Column (name="lastupdateed", nullable=false)
 	String lastupdateed;
+	@Column (name="status", nullable=false)
+	String status;
 	public int getPk_SchoolId() {
 		return pk_SchoolId;
 	}
@@ -140,7 +142,6 @@ public class SchoolInfo {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	@Column (name="status", nullable=false)
-	String status;
+
 
 }

@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.efreelearn.model.SubjectInfo;
 @Repository
 public interface SubjectInfoRepository extends JpaRepository<SubjectInfo,Integer>{
-
 }
 
 
