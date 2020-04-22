@@ -6,14 +6,14 @@ import java.util.Date;
 
 public class UserInfo {
 
-    int id;
-    String name;
+    int pk_user_id;
+    String user_name;
     String email;
     Date date;
 
     public UserInfo(int id, String name, String email, Date date) {
-        this.id = id;
-        this.name = name;
+        this.pk_user_id = id;
+        this.user_name = name;
         this.email = email;
         this.date = date;
     }
@@ -21,27 +21,27 @@ public class UserInfo {
     @Override
     public String toString() {
         return "Customer{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+                "pk_user_id=" + pk_user_id +
+                ", user_name='" + user_name + '\'' +
                 ", email='" + email + '\'' +
                 ", date=" + date +
                 '}';
     }
 
     public int getId() {
-        return id;
+        return pk_user_id;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.pk_user_id = id;
     }
 
     public String getName() {
-        return name;
+        return user_name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.user_name = name;
     }
 
     public String getEmail() {

@@ -30,7 +30,7 @@ public class UserInfoRepository {
     public void addCustomer(String id,String name, String email) {
 /*
         jdbcTemplate.update("INSERT INTO user_info(pk_user_id,user_name, email_id, created_datettime) VALUES (?,?,?)",
-                name, email, new Date());*/
+                user_name, email, new Date());*/
 
     }
 
