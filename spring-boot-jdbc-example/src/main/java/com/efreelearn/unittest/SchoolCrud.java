@@ -1,12 +1,6 @@
 package com.efreelearn.unittest;
 
-import java.util.List;
-
-import javax.persistence.Column;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.hibernate4.HibernateTemplate;
-import org.springframework.stereotype.Repository;
 
 import com.efreelearn.dao.SchoolInfoRepository;
 import com.efreelearn.model.SchoolInfo;
