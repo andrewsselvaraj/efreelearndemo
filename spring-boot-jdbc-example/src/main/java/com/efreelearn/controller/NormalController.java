@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class TodoController {
+@RequestMapping
+public class NormalController {
 @RequestMapping(value = "/add-todo", method = RequestMethod.GET)
 public String showAddTodoPage(ModelMap model) {
     model.addAttribute("todo", "");
