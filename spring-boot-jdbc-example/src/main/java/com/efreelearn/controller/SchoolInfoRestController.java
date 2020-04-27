@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.efreelearn.dao.OrganisationRepository;
 import com.efreelearn.model.UserInfo;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class SchoolInfoRestController {
 	
