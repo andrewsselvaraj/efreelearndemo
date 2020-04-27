@@ -24,8 +24,17 @@ public class SchoolInfoRestController {
 		return "empty";
 	}
 	
+
 	@RequestMapping("/allSchoolInfo")
 	public List<UserInfo> getAllSchoolInfo()
+	{
+		List<UserInfo> userList=organisationRepository.findAll();
+		return userList;
+	}
+	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
+	@RequestMapping("/allSchoolInfoNew")
+	public List<UserInfo> getAllSchoolInfoNew()
 	{
 		List<UserInfo> userList=organisationRepository.findAll();
 		return userList;
