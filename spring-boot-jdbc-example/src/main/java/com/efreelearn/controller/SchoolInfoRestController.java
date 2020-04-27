@@ -24,7 +24,7 @@ public class SchoolInfoRestController {
 		return "empty";
 	}
 	
-
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@RequestMapping("/allSchoolInfo")
 	public List<UserInfo> getAllSchoolInfo()
 	{
@@ -46,5 +46,11 @@ public class SchoolInfoRestController {
     	al.add("arg0");al.add("arg1");
         return al;
     }
+	@RequestMapping("/allSchoolInfo2")
+	public List<UserInfo> getAllSchoolInfo2()
+	{
+		List<UserInfo> userList=organisationRepository.findAll();
+		return userList;
+	}
 
 }
