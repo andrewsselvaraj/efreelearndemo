@@ -18,7 +18,7 @@ public class SchoolInfoRestController {
 	@Autowired
 	OrganisationRepository organisationRepository;
 	
-	@RequestMapping("/index")
+	@RequestMapping("/getSchoolInfobyId")
 	public String getSchoolInfo(String id)
 	{
 		return "empty";
