@@ -11,7 +11,7 @@ public class IndexController {
 	@RequestMapping("/")
 	public String home(Map<String, Object> model) {
 		model.put("message", "HowToDoInJava Reader !!");
-		return "index";
+		return "index2";
 	}
 	
 	@RequestMapping("/next")
