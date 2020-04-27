@@ -13,7 +13,7 @@ public class HelloController {
     public String index() {
         return "Greetings from Spring Boot Hello CPntorler!";
     }
-    @RequestMapping("/ap")
+    @RequestMapping("/aporg")
     public  ArrayList<String> addtionalPath() {
     	ArrayList<String> al = new ArrayList<String>();
     	al.add("arg0");al.add("arg1");
