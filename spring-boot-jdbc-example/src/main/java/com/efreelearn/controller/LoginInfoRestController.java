@@ -17,20 +17,53 @@ import com.efreelearn.model.UserInfo;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-public class UserInfoRestController {
+public class LoginInfoRestController {
 	
 	@Autowired
 	LoginRepository loginRepository;
 	
 
 	
-	@CrossOrigin(origins = "*", allowedHeaders = "*")
- 
+	@CrossOrigin(origins = "*", allowedHeaders = "*") 
 	@RequestMapping(value = "/validateUser", method =  RequestMethod.POST)
 	public List<UserInfo> validateUser(@RequestParam("userName") String userName,@RequestParam("password") String password)
 	{
+		try
+		{
 		List<UserInfo> userList=loginRepository.validateUser(userName, password);
 		return userList;
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+
+	
+	@CrossOrigin(origins = "*", allowedHeaders = "*") 
+	@RequestMapping(value = "/validateUserDummy", method =  RequestMethod.GET)
+	public List<UserInfo> validateUserDummy(@RequestParam("userName") String userName,@RequestParam("password") String password)
+	{
+		try
+		{
+		List<UserInfo> userList=loginRepository.validateUser(userName, password);
+		return userList;
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
+	@RequestMapping("/loginTest")
+	public String loginTest()
+	{
+ 
+		return "loginTest";
 	}
 	
 	
