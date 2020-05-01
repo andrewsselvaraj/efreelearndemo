@@ -15,6 +15,21 @@ public class Answer {
 	@Column (name="fk_SubjectID", nullable=false)
 	String fk_SubjectID;
 	
+	public String getCorrect_answer() {
+		return correct_answer;
+	}
+	public void setCorrect_answer(String correct_answer) {
+		this.correct_answer = correct_answer;
+	}
+	public String getAnswer() {
+		return answer;
+	}
+	public void setAnswer(String answer) {
+		this.answer = answer;
+	}
+	String correct_answer;
+	String answer;
+	
 	public String getPk_answerid() {
 		return pk_answerid;
 	}

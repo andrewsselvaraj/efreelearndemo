@@ -66,6 +66,22 @@ public class LoginInfoRestController {
 		return "loginTest";
 	}
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*") 
+	@RequestMapping(value = "/loginUser", method =  RequestMethod.POST)
+	public UserInfo loginUser(@RequestParam("userName") String userName,@RequestParam("password") String password)
+	{
+		try
+		{
+		 UserInfo  userList=loginRepository.loginUser(userName, password);
+		return userList;
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	
 	
 	 
