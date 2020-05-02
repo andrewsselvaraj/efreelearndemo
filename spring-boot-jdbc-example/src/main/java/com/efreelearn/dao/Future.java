@@ -1,3 +1,4 @@
+package com.efreelearn.dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ import com.efreelearn.model.QuestionAnswers;
 import com.efreelearn.model.UserInfo;
 
 @Repository
-public class QuestionsRepository2 implements RowMapper<QuestionAnswers>{
+public class Future implements RowMapper<QuestionAnswers>{
 
 	@Override
 	public QuestionAnswers mapRow(ResultSet arg0, int arg1) throws SQLException {
