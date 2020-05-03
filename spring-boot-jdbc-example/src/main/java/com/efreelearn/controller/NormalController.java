@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/NormalController")
+
 public class NormalController {
 @RequestMapping(value = "/add-todo", method = RequestMethod.GET)
 public String showAddTodoPage(ModelMap model) {
