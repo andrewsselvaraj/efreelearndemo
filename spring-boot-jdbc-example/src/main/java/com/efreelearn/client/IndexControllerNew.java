@@ -12,22 +12,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
 @Controller
-public class IndexController {
+public class IndexControllerNew {
 
-	@RequestMapping("/in")
+	@RequestMapping("/inNew")
 	public String home(Map<String, Object> model) {
 		model.put("message", "HowToDoInJava Reader !!");
 		return "index";
 	}
 	
-	@RequestMapping("/next")
+	@RequestMapping("/nextNew")
 	public String next(Map<String, Object> model) {
 		model.put("message", "You are in new page !!");
 		return "next";
 	}
 	
 	@CrossOrigin(origins = "*", allowedHeaders = "*") 
-	@RequestMapping(value = "/validateUser", method =  RequestMethod.POST)
+	@RequestMapping(value = "/validateUserNew", method =  RequestMethod.POST)
 	private static void validateUser(@RequestParam("userName") String userName,@RequestParam("password") String password)
 	{
 	    final String uri = "https://jdbc-apps.cfapps.io/validateUser";
@@ -44,7 +44,7 @@ public class IndexController {
 	}
 	
 	@CrossOrigin(origins = "*", allowedHeaders = "*") 
-	@RequestMapping(value = "/validateUserPostforObject", method =  RequestMethod.GET)
+	@RequestMapping(value = "/validateUserPostforObjectNew", method =  RequestMethod.GET)
 	private static void validateUserPostforObject(@RequestParam("userName") String userName,@RequestParam("password") String password)
 	{
 	    final String uri = "https://jdbc-apps.cfapps.io/validateUser";

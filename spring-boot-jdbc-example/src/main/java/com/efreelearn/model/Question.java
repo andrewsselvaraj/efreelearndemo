@@ -73,6 +73,27 @@ public class Question {
 	String pk_questionid="";
 	@Column(name="QuestionName",nullable=false)
 	String QuestionName=""; 
+
+	
+	public String getAnswer_type() {
+		return answer_type;
+	}
+	public void setAnswer_type(String answer_type) {
+		this.answer_type = answer_type;
+	}
+	public String getMedia_type() {
+		return media_type;
+	}
+	public void setMedia_type(String media_type) {
+		this.media_type = media_type;
+	}
+	@Column(name="answer_type",nullable=false)
+	String answer_type=""; 
+	
+	@Column(name="media_type",nullable=false)
+	String media_type=""; 
+	
+	
 	@Column(name="fk_SchoolId",nullable=false)
 	String fk_SchoolId = "";
 	@Column(name="fk_SubjectId",nullable=false)

@@ -16,13 +16,13 @@ import com.efreelearn.vo.UserVONew;
 @Controller
 public class LoginController {
 
-	@RequestMapping("/login")
+	@RequestMapping("/loginNew2")
 	public String home(Map<String, Object> model) {
 		model.put("message", "HowToDoInJava Reader !!");
 		return "index";
 	}
 	
-	@RequestMapping("/next")
+	@RequestMapping("/nextNew2")
 	public String next(Map<String, Object> model) {
 		model.put("message", "You are in new page !!");
 		return "next";
@@ -30,7 +30,7 @@ public class LoginController {
 	
 	
 	@CrossOrigin(origins = "*", allowedHeaders = "*") 
-	@RequestMapping(value = "/loginUser", method =  RequestMethod.POST)
+	@RequestMapping(value = "/loginUserNew1", method =  RequestMethod.POST)
 	private String loginUser(@RequestParam("userName") String userName,@RequestParam("password") String password)
 	{
 		
@@ -51,7 +51,7 @@ public class LoginController {
 	}
 	
 	@CrossOrigin(origins = "*", allowedHeaders = "*") 
-	@RequestMapping(value = "/validateUser", method =  RequestMethod.POST)
+	@RequestMapping(value = "/validateUserNew1", method =  RequestMethod.POST)
 	private String validateUser(@RequestParam("userName") String userName,@RequestParam("password") String password)
 	{
 		
@@ -70,7 +70,7 @@ public class LoginController {
 	}
 	
 	@CrossOrigin(origins = "*", allowedHeaders = "*") 
-	@RequestMapping(value = "/validateUserPostforObject", method =  RequestMethod.GET)
+	@RequestMapping(value = "/validateUserPostforObjectNew1", method =  RequestMethod.GET)
 	private String validateUserPostforObject(@RequestParam("userName") String userName,@RequestParam("password") String password)
 	{
 	    final String uri = "https://spring-jdbc.cfapps.io/validateUserDummy";
