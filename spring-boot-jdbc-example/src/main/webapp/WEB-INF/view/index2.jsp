@@ -5,9 +5,11 @@
 	<div>
 		<div>
 			<h1>Spring Boot JSP Example</h1>
-			<h2>Hello andrrrreeee${message}</h2>
-			
+			<h2>Hello andrrrreeee in VIEW${message}</h2>
+			https://howtodoinjava.com/spring-boot2/logging/spring-boot-logging-configurations/
 			Click on this <strong><a href="next">link</a></strong> to visit another page.
+			Click on this <strong><a href="initiateLogin">initiateLogin</a></strong> to visit another page.
+		
 		</div>
 	</div>
 </body>

@@ -5,6 +5,9 @@ import java.util.Arrays;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.web.context.ContextLoader;
+
+
 
 @SpringBootApplication
 public class Application {
@@ -19,7 +22,12 @@ public class Application {
         for (String beanName : beanNames) {
             System.out.println(beanName);
         }
-        System.out.println("END");
+    
+      
+     
+        
+        
+        
     }
 
 }

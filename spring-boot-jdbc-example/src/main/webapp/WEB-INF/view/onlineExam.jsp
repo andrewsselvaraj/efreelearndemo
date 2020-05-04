@@ -4,10 +4,10 @@
 <body>
 	<div>
 		<div>
-			<h1>Another page</h1>
-			<h2>Hello ${message}</h2>
+			<h1>Spring Boot JSP Example</h1>
+			<h2>Welcome to online Exam</h2>
 			
-			Click on this <strong><a href="/">link</a></strong> to visit previous page.
+			Click on this <strong><a href="next">link</a></strong> to visit another page.
 		</div>
 	</div>
 </body>

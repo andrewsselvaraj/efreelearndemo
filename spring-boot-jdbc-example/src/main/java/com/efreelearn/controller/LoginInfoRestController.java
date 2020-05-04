@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.efreelearn.dao.LoginRepository;
-import com.efreelearn.dao.OrganisationRepository;
-import com.efreelearn.dao.UserInfoRepository;
 import com.efreelearn.model.UserInfo;
+
+
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
@@ -72,8 +72,8 @@ public class LoginInfoRestController {
 	{
 		try
 		{
-		 UserInfo  userList=loginRepository.loginUser(userName, password);
-		return userList;
+		 UserInfo  user=loginRepository.loginUser(userName, password);
+		return user;
 		}
 		catch(Exception e)
 		{

@@ -4,7 +4,7 @@ package com.efreelearn.model;
 
 import java.util.Date;
 
-public class UserInfo {
+public class UserInfoNew {
 
     int pk_user_id;
     String user_name;
@@ -36,14 +36,14 @@ public class UserInfo {
     String email;
     Date date;
 
-    public UserInfo(int id, String name, String email, Date date) {
+    public UserInfoNew(int id, String name, String email, Date date) {
         this.pk_user_id = id;
         this.user_name = name;
         this.email = email;
         this.date = date;
     }
 
-    public UserInfo() {
+    public UserInfoNew() {
 		// TODO Auto-generated constructor stub
 	}
 
