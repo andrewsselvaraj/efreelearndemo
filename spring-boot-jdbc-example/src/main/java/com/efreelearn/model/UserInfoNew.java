@@ -3,7 +3,7 @@
 package com.efreelearn.model;
 
 import java.util.Date;
-
+UserInfo
 public class UserInfoNew {
 
     int pk_user_id;

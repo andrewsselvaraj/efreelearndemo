@@ -17,10 +17,10 @@ public class LoginAspect {
 		System.out.println("ANDREW LOG");
 	}
 	
-	@Around(value= "displayLogMessage()")  
+	@Around(value= "displayLogMessageNEW()")  
 	public void aroundAdvice(ProceedingJoinPoint jp) throws Throwable   
 	{  
-	System.out.println("The method aroundAdvice() before invokation of the method " + jp.getSignature().getName() + " method");  
+	System.out.println("BEFORE METHOD " + jp.getSignature().getName() + " method");  
 	try   
 	{  
 	jp.proceed();  
@@ -29,7 +29,7 @@ public class LoginAspect {
 	{  
 	  
 	}  
-	System.out.println("The method aroundAdvice() after invokation of the method " + jp.getSignature().getName() + " method");  
+	System.out.println("AFTER METHOD " + jp.getSignature().getName() + " method");  
 	}  
 }  
 	
