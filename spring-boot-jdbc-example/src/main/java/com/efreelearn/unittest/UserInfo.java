@@ -2,7 +2,7 @@ package com.efreelearn.unittest;
 
 import org.springframework.web.client.RestTemplate;
 
-import com.efreelearn.response.UserResponse;
+import com.efreelearn.vo.UserResponse;
 
 public class UserInfo {
 

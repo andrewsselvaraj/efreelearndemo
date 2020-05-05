@@ -2,6 +2,8 @@ package com.efreelearn.client;
 
 import java.util.Map;
 
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -10,13 +12,13 @@ import org.springframework.web.client.RestTemplate;
 
 import com.efreelearn.vo.QuestionAnswersResponse;
 import com.efreelearn.vo.QuestionResponse;
-
+@Controller
+@EnableAspectJAutoProxy
 public class QuestionAnswerInfoController {
 	
 	
 
-	@CrossOrigin(origins = "*", allowedHeaders = "*") 
-	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")	
 	@RequestMapping(value = "/getAllQuestionAnswers", method =  RequestMethod.GET)
 	private String validateUser(Map<String, Object> model)
 	{

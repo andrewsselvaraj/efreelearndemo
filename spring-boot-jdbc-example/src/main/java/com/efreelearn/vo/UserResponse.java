@@ -1,4 +1,4 @@
-package com.efreelearn.response;
+package com.efreelearn.vo;
 
 public class UserResponse {
 	String email;

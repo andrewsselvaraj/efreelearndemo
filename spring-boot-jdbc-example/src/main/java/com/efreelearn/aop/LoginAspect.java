@@ -17,7 +17,7 @@ public class LoginAspect {
 		System.out.println("ANDREW LOG");
 	}
 	
-	@Around(value= "displayLogMessageNEW()")  
+	@Around(value= "displayLogMessage()")  
 	public void aroundAdvice(ProceedingJoinPoint jp) throws Throwable   
 	{  
 	System.out.println("BEFORE METHOD " + jp.getSignature().getName() + " method");  

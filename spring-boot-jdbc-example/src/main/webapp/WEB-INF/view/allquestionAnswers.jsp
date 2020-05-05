@@ -7,7 +7,12 @@
 
 		<ul>
 			<c:forEach var="questionAnswers" items="${allquestionAnswers}">
-				<li>${questionAnswers.questionName}</li>
+				<li>${questionAnswers.question.questionName}</li>
+				<c:forEach var="answerObject" items="${questionAnswers.answers}">	
+				<ul>		
+				<li>${answerObject.answer}</li>
+				</ul>
+				</c:forEach>
 			</c:forEach>
 		</ul>
 
