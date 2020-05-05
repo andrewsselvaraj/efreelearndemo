@@ -18,12 +18,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
-import com.efreelearn.model.UserInfo;
-import com.efreelearn.model.UserInfoNew;
-
-
-
- 
 
 @Controller
 @EnableAspectJAutoProxy  
@@ -103,19 +97,10 @@ public class LoginController {
 	    //String result = restTemplate.postForObject(url, String.class, null, uriVariables);
 	    UserInfoNew u=restTemplate.postForObject(url, user, UserInfoNew.class);
 	    */
-	    UserInfoNew u = new UserInfoNew();
-	    u.setEmail("email");
-	    u.setName("name");
-	    model.put("message", u);
+
 		return "onlineExam";
 	}
-	
-	@RequestMapping(value = "addUser", method = RequestMethod.POST)
-	public ResponseEntity<String> createEmployee(@RequestBody UserInfo userInfo) 
-	{
-	    System.out.println(userInfo);
-	    return new ResponseEntity<String>(HttpStatus.CREATED);
-	}
+
 	
 	
 	@RequestMapping(value = "initiateLogin", method =  RequestMethod.GET)

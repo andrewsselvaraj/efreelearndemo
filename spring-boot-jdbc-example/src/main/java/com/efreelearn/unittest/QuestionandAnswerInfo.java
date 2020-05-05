@@ -2,17 +2,24 @@ package com.efreelearn.unittest;
 
 import org.springframework.web.client.RestTemplate;
 
-import com.efreelearn.response.UserResponse;
+
+ 
+import com.efreelearn.vo.QuestionAnswersResponse;
+import com.efreelearn.vo.QuestionResponse;
+
+
 
 public class QuestionandAnswerInfo {
 
 	public static void main(String[] args) {
-		String url = "https://spring-jdbc.cfapps.io/validateUserDummy?userName=shirly&password=shirly";
+		String url = "https://spring-jdbc.cfapps.io/findAllQuestionwithAnswerforAll";
 		RestTemplate restTemplate = new RestTemplate();
-		UserResponse[] u = restTemplate.getForObject(url, UserResponse[].class);
-		System.out.println("aaa "+u[0].getEmail());
 
-	
+
+		QuestionAnswersResponse[] qa=restTemplate.getForObject(url, QuestionAnswersResponse[].class);
+		System.out.println("qqq"+qa.length);
+		QuestionResponse q= qa[0].getQuestion();
+		System.out.println("aaaa"+q.getQuestionName());
 		
 		// TODO Auto-generated method stub
 
