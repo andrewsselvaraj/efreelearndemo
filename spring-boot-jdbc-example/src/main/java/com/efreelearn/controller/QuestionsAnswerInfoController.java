@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.efreelearn.dao.QuestionAnswersRepository;
+import com.efreelearn.model.QuestionAnswers;
 
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
