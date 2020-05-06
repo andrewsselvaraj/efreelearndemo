@@ -1,8 +1,0 @@
----
-applications:
-  - name: spring-jdbc
-    buildpacks: 
-      - java_buildpack
-    path: target/spring-boot-jdbc-1.0.war
-    services:
-      - mysql
