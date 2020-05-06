@@ -61,7 +61,37 @@ public class SubjectController {
 	    return "allSubject";
 	}
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*") 
+	@RequestMapping(value = "/postSubjectMVC", method =  RequestMethod.POST)
+	private String postSubject(Map<String, Object> model)
+	{
+		SubjectInfo subjectInfo = new SubjectInfo();
+		Random rand = new Random();
 
+		// nextInt as provided by Random is exclusive of the top value so you need to add 1 
+
+		long randomNum = rand.nextInt((10000 - 10) + 1) + 10;
+		subjectInfo.setPk_SubjectId(randomNum);
+		subjectInfo.setSubjectName("subjectName"+randomNum);
+		subjectInfo.setFk_SchoolId(0);
+		java.util.Date date=new java.util.Date();  
+		//subjectInfo.setLastupdatedby(date);
+		subjectInfo.setLastupdateed("lastupdateed");
+		subjectInfo.setStatus("1");
+		subjectInfo.setCreatedby("model"+model.get("createdby"));
+		subjectInfo.setDescription("model"+model.get("description")+ "description");
+		String url = "http://spring-jdbc.cfapps.io/postSubject";
+		RestTemplate restTemplate = new RestTemplate();
+	
+		SubjectInfo unmarshalledSubject = restTemplate.postForObject(url, subjectInfo, SubjectInfo.class);
+	
+		 
+		model.put("UnmarshalledSubject", unmarshalledSubject);
+	    
+	   
+	    
+	    return "allSubject";
+	}
 
 
 }
