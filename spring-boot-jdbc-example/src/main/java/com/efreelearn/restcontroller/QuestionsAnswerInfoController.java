@@ -1,4 +1,4 @@
-package com.efreelearn.controller;
+package com.efreelearn.restcontroller;
 
 import java.util.List;
 
@@ -26,7 +26,7 @@ public class QuestionsAnswerInfoController {
 	@RequestMapping(value="/findAllQuestionwithAnswerforAll", method =  RequestMethod.GET)
 	public List<QuestionAnswers> findAllQuestionwithAnswerforAll()
 	{
-		List<QuestionAnswers> userList=questionAnswersRepository.findAllQuestionwithAnswerforAll("pk_SubjectId", "fk_SchoolId");
+		List<QuestionAnswers> userList=questionAnswersRepository.findAllQuestionwithAnswerforAll("pk_SubjectId", "fk_schoolid");
 		return userList;
 	}
 	

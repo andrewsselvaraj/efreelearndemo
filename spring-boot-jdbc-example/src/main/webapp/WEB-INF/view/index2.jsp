@@ -8,9 +8,14 @@
 			<h2>Hello andrrrreeee in VIEW${message}</h2>
 			https://howtodoinjava.com/spring-boot2/logging/spring-boot-logging-configurations/
 			Click on this <strong><a href="next">link</a></strong> to visit another page.
-			Click on this <strong><a href="/getAllQuestionAnswersNew/">getAllQuestionAnswersNew</a></strong> to visit another page.
-			Click on this <strong><a href="/findAllQuestionwithAnswerforAll">initiateLogin</a></strong> to visit another page.
-			Click on this <strong><a href="findAllQuestionwithAnswerforAll">initiateLogin</a></strong> to visit another page.
+			<BR>Click on this <strong><a href="/getAllQuestionAnswersNew/">getAllQuestionAnswersNew</a></strong> to visit another page.
+			<BR>Click on this <strong><a href="/findAllQuestionwithAnswerforAll">initiateLogin</a></strong> to visit another page.
+			<BR>Click on this <strong><a href="findAllQuestionwithAnswerforAll">initiateLogin</a></strong> to visit another page.
+			<BR>Click on this <strong><a href="/insertSubject/">insertSubject</a></strong> to visit another page.
+			<BR>Click on this <strong><a href="/loadSubjectEntry">loadSubjectEntry</a></strong> to visit another page.
+			<BR>
+			Click on this <strong><a href="/initiateLogin">initiateLogin</a></strong> to visit another page.
+			http://localhost:2250//
 			
 		
 		</div>

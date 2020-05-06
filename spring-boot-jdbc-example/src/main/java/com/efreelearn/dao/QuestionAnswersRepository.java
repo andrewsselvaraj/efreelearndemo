@@ -33,8 +33,8 @@ public class QuestionAnswersRepository {
     	
     	String sql = "SELECT q.QuestionName,q.answer_type,q.media_type,q.pk_questionid,a.pk_answerid,a.answer,a.answer,a.correct_answer FROM question_info q , answer_info a ";
     	sql = sql + " where q.fk_SchoolId= a.fk_SchoolId and q.fk_SubjectId=a.fk_SubjectId and q.pk_questionid=a.fk_questionid order by q.pk_questionid";
-    	//sql = sql + " and q.fk_SubjectId='" +pk_SubjectId+"' and q.fk_SchoolId='"+fk_SchoolId;
-    	//sql = sql + " and q.fk_SubjectId='" +pk_SubjectId+"' and q.fk_SchoolId='"+fk_SchoolId;
+    	//sql = sql + " and q.fk_SubjectId='" +pk_SubjectId+"' and q.fk_SchoolId='"+fk_schoolid;
+    	//sql = sql + " and q.fk_SubjectId='" +pk_SubjectId+"' and q.fk_SchoolId='"+fk_schoolid;
     	//jdbcTemplate.execute(sql);
         return jdbcTemplate.query(sql,
                 new ResultSetExtractor<List<QuestionAnswers>>() {

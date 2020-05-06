@@ -1,4 +1,4 @@
-package com.efreelearn.client;
+package com.efreelearn.mvccontroller;
 
 import java.net.URI;
 import java.util.HashMap;

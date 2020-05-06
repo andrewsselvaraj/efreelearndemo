@@ -10,7 +10,7 @@ public class Answer {
 	String pk_answerid;
 	@Column (name="fk_questionid",nullable=false)
 	String fk_questionid;
-	@Column (name="fk_SchoolId",nullable=false)
+	@Column (name="fk_schoolid",nullable=false)
 	String fk_SchoolId;
 	@Column (name="fk_SubjectID", nullable=false)
 	String fk_SubjectID;

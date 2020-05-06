@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 public class QuestionAnswerAspect {
 
-	@Pointcut(value= "execution(* com.efreelearn.client.QuestionAnswerInfoController.*(..))")  
+	@Pointcut(value= "execution(* com.efreelearn.mvccontroller.QuestionAnswerInfoController.*(..))")  
 	private void getQuestions()   
 	{   
 		System.out.println("ANDREW LOG");

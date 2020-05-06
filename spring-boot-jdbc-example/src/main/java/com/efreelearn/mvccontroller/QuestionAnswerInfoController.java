@@ -1,7 +1,8 @@
-package com.efreelearn.client;
+package com.efreelearn.mvccontroller;
 
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -16,8 +17,7 @@ import com.efreelearn.vo.QuestionResponse;
 @EnableAspectJAutoProxy
 public class QuestionAnswerInfoController {
 	
-	
-
+ 
 	@CrossOrigin(origins = "*", allowedHeaders = "*")	
 	@RequestMapping(value = "/getAllQuestionAnswers", method =  RequestMethod.GET)
 	private String validateUser(Map<String, Object> model)
@@ -27,6 +27,22 @@ public class QuestionAnswerInfoController {
 
 
 	QuestionAnswersResponse[] qa=restTemplate.getForObject(url, QuestionAnswersResponse[].class);
+	System.out.println("qqq 111"+qa.length);
+	QuestionResponse q= qa[0].getQuestion();
+	System.out.println("aaaa 111"+q.getQuestionName());
+	model.put("allquestionAnswers", qa);
+	return "allquestionAnswers";
+	}
+	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")	
+	@RequestMapping(value = "/postQuestionAndAnswers", method =  RequestMethod.POST)
+	private String postQuestionAndAnswers(Map<String, Object> model)
+	{
+	String url = "https://spring-jdbc.cfapps.io/postQuestionAndAnswers";
+	RestTemplate restTemplate = new RestTemplate();
+
+
+	QuestionAnswersResponse[] qa=restTemplate.postForObject(url, QuestionAnswersResponse[].class,QuestionAnswersResponse[].class);
 	System.out.println("qqq 111"+qa.length);
 	QuestionResponse q= qa[0].getQuestion();
 	System.out.println("aaaa 111"+q.getQuestionName());

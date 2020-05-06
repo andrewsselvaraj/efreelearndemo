@@ -1,4 +1,4 @@
-package com.efreelearn.controller;
+package com.efreelearn.restcontroller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

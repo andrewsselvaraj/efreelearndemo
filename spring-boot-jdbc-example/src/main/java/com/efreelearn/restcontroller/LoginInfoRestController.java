@@ -1,4 +1,4 @@
-package com.efreelearn.controller;
+package com.efreelearn.restcontroller;
 
 import java.util.ArrayList;
 import java.util.List;

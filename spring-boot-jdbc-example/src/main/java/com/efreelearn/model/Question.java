@@ -94,7 +94,7 @@ public class Question {
 	String media_type=""; 
 	
 	
-	@Column(name="fk_SchoolId",nullable=false)
+	@Column(name="fk_schoolid",nullable=false)
 	String fk_SchoolId = "";
 	@Column(name="fk_SubjectId",nullable=false)
 	String fk_SubjectId = "";

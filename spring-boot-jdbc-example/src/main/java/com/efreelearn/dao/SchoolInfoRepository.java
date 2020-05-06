@@ -5,7 +5,8 @@ import org.springframework.stereotype.Repository;
 
 import com.efreelearn.model.SchoolInfo;
 @Repository
-public interface SchoolInfoRepository extends JpaRepository<SchoolInfo,Integer>{
+public interface SchoolInfoRepository extends JpaRepository<com.efreelearn.model.SchoolInfo,Integer>{
 	
+
   
 }

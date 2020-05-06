@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 public class LoginAspect {
 
-	@Pointcut(value= "execution(* com.efreelearn.client.LoginController.*(..))")  
+	@Pointcut(value= "execution(* com.efreelearn.mvccontroller.LoginController.*(..))")  
 	private void displayLogMessage()   
 	{   
 		System.out.println("ANDREW LOG");
