@@ -38,7 +38,7 @@ public class SubjectRestController {
 		}
 
 	@CrossOrigin(origins = "*", allowedHeaders = "*") 
-	@RequestMapping(value = "/postSubject", method =  RequestMethod.POST,headers = {"content-type=application/json"})
+	@RequestMapping(value = "/postSubject", method =  RequestMethod.POST,headers = {"content-type=application/json,application/x-www-form-urlencoded"})
 	private String postSubject(@RequestBody SubjectInfo subjectInfo)
 	{
  

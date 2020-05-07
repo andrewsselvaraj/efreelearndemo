@@ -12,7 +12,12 @@ public class SubjectInfo {
 	@Column (name="Subjectname", nullable=false)
 	  String subjectname;
 	@Column (name="fk_schoolid", nullable=false)
-	  int fk_schoolid;
+	Long fk_schoolid;
+	@Column (name="classid", nullable=true)
+	Long classid;
+	
+	@Column (name="classname", nullable=true)
+	String classname;
 	@Column (name="description", nullable=false)
 	String description;
 	@Column (name="createdby", nullable=false)
@@ -35,10 +40,10 @@ public class SubjectInfo {
 	public void setSubjectName(String subjectName) {
 		subjectname = subjectName;
 	}
-	public int getFk_SchoolId() {
+	public Long getFk_SchoolId() {
 		return fk_schoolid;
 	}
-	public void setFk_SchoolId(int fk_SchoolId) {
+	public void setFk_SchoolId(Long fk_SchoolId) {
 		this.fk_schoolid = fk_SchoolId;
 	}
 	public String getDescription() {
@@ -72,5 +77,28 @@ public class SubjectInfo {
 		this.status = status;
 	}
 
-
+	public String getSubjectname() {
+		return subjectname;
+	}
+	public void setSubjectname(String subjectname) {
+		this.subjectname = subjectname;
+	}
+	public Long getFk_schoolid() {
+		return fk_schoolid;
+	}
+	public void setFk_schoolid(Long fk_schoolid) {
+		this.fk_schoolid = fk_schoolid;
+	}
+	public Long getClassid() {
+		return classid;
+	}
+	public void setClassid(Long classid) {
+		this.classid = classid;
+	}
+	public String getClassname() {
+		return classname;
+	}
+	public void setClassname(String classname) {
+		this.classname = classname;
+	}
 }

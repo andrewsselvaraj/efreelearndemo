@@ -22,6 +22,7 @@ public class SchoolInfoRestController {
 	OrganisationRepository organisationRepository;
 	@Autowired 
 	LoginRepository loginRepository;
+	
 	@RequestMapping("/getSchoolInfobyId")
 	public String getSchoolInfo(String id)
 	{
