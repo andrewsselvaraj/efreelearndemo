@@ -41,7 +41,7 @@ public class LoginController {
 
 	
 	@CrossOrigin(origins = "*", allowedHeaders = "*") 
-	@RequestMapping(value = "/validateUserNew1", method =  RequestMethod.POST)
+	@RequestMapping(value = "/loginValidateUser", method =  RequestMethod.POST)
 	private String validateUser(@RequestParam("userName") String userName,@RequestParam("password") String password)
 	{
 		log.info("ANDREW ERROR");
@@ -57,7 +57,7 @@ public class LoginController {
 	    
 	   
 	    
-	    return "next";
+	    return "allquestionAnswers";
 	}
 	
 	@CrossOrigin(origins = "*", allowedHeaders = "*") 

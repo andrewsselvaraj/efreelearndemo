@@ -45,7 +45,7 @@ public class SubjectController {
 		long randomNum = rand.nextInt((10000 - 10) + 1) + 10;
 		subjectInfo.setPk_SubjectId(randomNum);
 		subjectInfo.setSubjectName("subjectName"+randomNum);
-		subjectInfo.setFk_SchoolId(0);
+		subjectInfo.setFk_SchoolId(0L);
 		java.util.Date date=new java.util.Date();  
 		//subjectInfo.setLastupdatedby(date);
 		subjectInfo.setLastupdateed("lastupdateed");
@@ -73,7 +73,7 @@ public class SubjectController {
 		long randomNum = rand.nextInt((10000 - 10) + 1) + 10;
 		subjectInfo.setPk_SubjectId(randomNum);
 		subjectInfo.setSubjectName("subjectName"+randomNum);
-		subjectInfo.setFk_SchoolId(0);
+		subjectInfo.setFk_SchoolId(0L);
 		java.util.Date date=new java.util.Date();  
 		//subjectInfo.setLastupdatedby(date);
 		subjectInfo.setLastupdateed("lastupdateed");

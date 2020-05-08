@@ -14,7 +14,7 @@ public class UserInfoRepository {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
-
+/*
     public List<UserInfo> findAll() {
 
         List<UserInfo> result = jdbcTemplate.query(
@@ -22,12 +22,13 @@ public class UserInfoRepository {
                 (rs, rowNum) -> new UserInfo(rs.getInt("pk_user_id"),
                         rs.getString("user_name"), rs.getString("email_id"), rs.getDate("created_datettime"))
         );
+      
 
         return result;
 
     }
     
-    
+     */ 
 
     public void addCustomer(String id,String name, String email) {
 /*

@@ -39,6 +39,14 @@ public class QuestionsAnswerInfoController {
 		return userList;
 	}
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
+	@RequestMapping(value="/findAllQuesAansbySchoolIDSubjecIDClassID", method =  RequestMethod.GET)
+	public List<QuestionAnswers> findAllQuesAansbySchoolIDSubjecIDClassID(@RequestParam("pk_SubjectId") String pk_SubjectId, @RequestParam("pk_SchoolId") String fk_schoolid,@RequestParam("classid") String classid)
+	{
+		List<QuestionAnswers> userList=questionAnswersRepository.findAllQuesAansbySchoolIDSubjecIDClassID(pk_SubjectId, fk_schoolid,classid);
+		return userList;
+	}
+	
 	
 	
 	

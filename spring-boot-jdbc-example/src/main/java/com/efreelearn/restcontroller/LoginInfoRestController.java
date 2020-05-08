@@ -65,7 +65,7 @@ public class LoginInfoRestController {
  
 		return "loginTest";
 	}
-	
+	/*
 	@CrossOrigin(origins = "*", allowedHeaders = "*") 
 	@RequestMapping(value = "/loginUser", method =  RequestMethod.POST)
 	public UserInfo loginUser(@RequestParam("userName") String userName,@RequestParam("password") String password)
@@ -82,7 +82,7 @@ public class LoginInfoRestController {
 		return null;
 	}
 	
-	
+	*/
 	
 	 
 }

@@ -17,8 +17,8 @@ public class OrganisationRepository {
     public List<UserInfo> findAll() {
 
         List<UserInfo> result = jdbcTemplate.query(
-                "SELECT pk_user_id, user_name, email_id, created_datettime FROM user_info",
-                (rs, rowNum) -> new UserInfo(rs.getInt("pk_user_id"),rs.getString("user_name"), rs.getString("email_id"), rs.getDate("created_datettime"))
+                "SELECT pk_user_id, user_name, email_id, created_datettime,fk_classid FROM user_info",
+                (rs, rowNum) -> new UserInfo(rs.getInt("pk_user_id"),rs.getString("user_name"), rs.getString("email_id"), rs.getDate("created_datettime"),rs.getString("fk_classid"),rs.getString("fk_classid"))
         );
 
         return result;

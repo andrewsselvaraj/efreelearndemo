@@ -36,11 +36,15 @@ public class UserInfo {
     String email;
     Date date;
 
-    public UserInfo(int id, String name, String email, Date date) {
+
+    public UserInfo(int id, String name, String email, Date date,String fk_school_id,String classid) {
         this.pk_user_id = id;
         this.user_name = name;
         this.email = email;
         this.date = date;
+        this.fk_school_id = fk_school_id;
+        this.classid = classid;
+
     }
 
     public UserInfo() {
@@ -56,6 +60,25 @@ public class UserInfo {
                 ", date=" + date +
                 '}';
     }
+	
+	public String getFk_school_id() {
+		return fk_school_id;
+	}
+
+	public void setFk_school_id(String fk_school_id) {
+		this.fk_school_id = fk_school_id;
+	}
+
+	public String getClassid() {
+		return classid;
+	}
+
+	public void setClassid(String classid) {
+		this.classid = classid;
+	}
+
+	String fk_school_id;
+    String classid;
 
     public int getId() {
         return pk_user_id;
