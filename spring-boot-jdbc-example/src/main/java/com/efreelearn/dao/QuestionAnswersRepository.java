@@ -11,8 +11,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
  
 import org.springframework.stereotype.Repository;
-
- 
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.efreelearn.model.Answer;
 import com.efreelearn.model.Question;
@@ -290,6 +289,11 @@ public List<QuestionAnswers> findAllQuesAansbySchoolIDSubjecIDClassID(String pk_
 
                 });
      
+    }
+    
+    public String insertQuestionAnswers(QuestionAnswers questionAnswers)
+    {
+    	return "";
     }
 
  

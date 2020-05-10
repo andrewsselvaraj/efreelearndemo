@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -46,6 +47,16 @@ public class QuestionsAnswerInfoController {
 		List<QuestionAnswers> userList=questionAnswersRepository.findAllQuesAansbySchoolIDSubjecIDClassID(pk_SubjectId, fk_schoolid,classid);
 		return userList;
 	}
+	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
+	@RequestMapping(value="/insertQuestionAnswers", method =  RequestMethod.POST)
+	public String insertQuestionAnswers(@RequestBody QuestionAnswers questionAnswers)
+	{
+
+		String resturnstratus=questionAnswersRepository.insertQuestionAnswers(questionAnswers);
+		return resturnstratus;
+	}
+	
 	
 	
 	

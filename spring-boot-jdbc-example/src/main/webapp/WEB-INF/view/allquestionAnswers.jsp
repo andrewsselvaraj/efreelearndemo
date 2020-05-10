@@ -2,6 +2,8 @@
 <html>
 <body>
 	<h2>Spring MVC and List Example</h2>
+	
+	<h2>Hello andrrrreeee in VIEW${userName}</h2>
 
 	<c:if test="${not empty allquestionAnswers}">
 
