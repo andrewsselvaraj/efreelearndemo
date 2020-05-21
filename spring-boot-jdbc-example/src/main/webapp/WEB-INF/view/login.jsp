@@ -1,20 +1,20 @@
-<!DOCTYPE html>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<html lang="en">
-<body>
-	<div>
-		<div>
-			<h1>Spring Boot JSP Example</h1>
-			<h2>Hello andrrrreeee in VIEW${message}</h2>
-			
-			<form action="/validateUserandLogin" method="post">
-			<input type="text" name="userName">
-			<input type="text" name="password">
-			<input type="submit"><input type="reset">
-			</form>
-		</div>
-	</div>
-	
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-</body>
-</html>
+        <form:form method="POST"
+          action="/validateUserandLogin" modelAttribute="employee">
+             <table>
+                <tr>
+                    <td><form:label path="lblusername">Name</form:label></td>
+                    <td><form:input path="username"/></td>
+                </tr>
+                <tr>
+                    <td><form:label path="lblpassword">Id</form:label></td>
+                    <td><form:input path="password"/></td>
+                </tr>
+
+                <tr>
+                    <td><input type="submit" value="Submit"/></td>
+                </tr>
+            </table>
+        </form:form>
+

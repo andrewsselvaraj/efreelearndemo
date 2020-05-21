@@ -1,8 +1,13 @@
 package com.efreelearn.mvccontroller;
 
 import java.net.URI;
+import java.security.Principal;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Consumer;
+
+import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,12 +16,19 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
+
+import com.efreelearn.vo.QuestionAnswersResponse;
+import com.efreelearn.vo.QuestionResponse;
+import com.efreelearn.vo.User;
 
 
 @Controller
@@ -30,11 +42,15 @@ public class LoginController {
 		model.put("message", "HowToDoInJava Reader !!");
 		return "index";
 	}
+	@RequestMapping(value = "/user")
+	   public Principal user(Principal principal) {
+	      return principal;
+	   }
 	
-	@RequestMapping("/nextNew2")
+	@RequestMapping("/reports")
 	public String next(Map<String, Object> model) {
 		model.put("message", "You are in new page !!");
-		return "next";
+		return "index2";
 	}
 	
 	
@@ -46,6 +62,11 @@ public class LoginController {
 	{
 		log.info("ANDREW ERROR");
 		System.out.println("ANDREW ERROR SOP");
+		log.trace("A TRACE Message");
+		log.debug("A DEBUG Message");
+		log.info("An INFO Message");
+		log.warn("A WARN Message");
+		log.error("An ERROR Message");
 	    final String uri = "https://spring-jdbc.cfapps.io/validateUser";
 	    
 	    RestTemplate restTemplate = new RestTemplate();
@@ -80,23 +101,36 @@ public class LoginController {
 	    return "index";
 	}
 	
-	@RequestMapping(value ="validateUserandLogin", method =  RequestMethod.POST)
-	public String validateUserandLogin(Map<String, Object> model)	
+	@RequestMapping(value ="validateUserandLogin", method = RequestMethod.POST)	
+	public String validateUserandLogin(@ModelAttribute("user")User user, 
+		      BindingResult result, ModelMap model)	
+	
 	{
 		final String url = "https://spring-jdbc.cfapps.io/loginUser";		
 	    
 	    RestTemplate restTemplate = new RestTemplate();
 	    
-	   /* Map<String, String> uriVariables = new HashMap<String, String>();
-	    uriVariables.put("userName", "shirly");
-	    uriVariables.put("password", "shirly");
-	   UserInfo user= new UserInfo();
-	    user.setName("shirly");
-	    user.setName("password");
-	   // URI result = restTemplate.postForLocation(uri, String.class, vars);
-	    //String result = restTemplate.postForObject(url, String.class, null, uriVariables);
-	    UserInfoNew u=restTemplate.postForObject(url, user, UserInfoNew.class);
-	    */
+	    log.info("model employee"+user.toString());
+		//System.out.println("model "+model.);
+		
+
+		String userName = (String) user.getUsername();
+		String password = (String) user.getPassword();
+		System.out.println(""+userName);
+		System.out.println("password"+password);
+		//model.getClass().getClasses().length();
+		log.error("model employee"+user.toString());
+		
+		 String url1 = "https://spring-jdbc.cfapps.io/findAllQuestionwithAnswerforAll";
+		 restTemplate = new RestTemplate();
+
+
+		QuestionAnswersResponse[] qa=restTemplate.getForObject(url1, QuestionAnswersResponse[].class);
+		System.out.println("I AM SOP qqq 111"+qa.length);
+		QuestionResponse q= qa[0].getQuestion();
+		System.out.println("I AM SOP aaaa 111"+q.getQuestionName());
+		model.put("allquestionAnswers", qa);
+	   
 
 		return "onlineExam";
 	}
@@ -104,9 +138,22 @@ public class LoginController {
 	
 	
 	@RequestMapping(value = "initiateLogin", method =  RequestMethod.GET)
+
 	public String initiateLogin(Model model)	
-	{		
+	{	
+		System.out.println("model "+model.toString());
+		//System.out.println("model "+model.);
+		Map<String, Object> s= model.asMap();
+		String userName = s.get("userName").toString();
+		String password = s.get("password").toString();
+		System.out.println("userName"+userName);
+		System.out.println("password"+password);
+		//model.getClass().getClasses().length();
 		return "login";
 	}
 
+
+ 
+
+	
 }

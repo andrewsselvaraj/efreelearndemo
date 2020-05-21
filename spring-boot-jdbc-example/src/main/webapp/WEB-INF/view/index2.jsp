@@ -13,6 +13,9 @@
 			<BR>Click on this <strong><a href="findAllQuestionwithAnswerforAll">initiateLogin</a></strong> to visit another page.
 			<BR>Click on this <strong><a href="/insertSubject/">insertSubject</a></strong> to visit another page.
 			<BR>Click on this <strong><a href="/loadSubjectEntry">loadSubjectEntry</a></strong> to visit another page.
+			<BR>Click on this <strong><a href="/loginNew2">INDEX MATTUM</a></strong> to visit another page.
+			
+			
 			<BR>
 			Click on this <strong><a href="/initiateLogin">initiateLogin</a></strong> to visit another page.
 			http://localhost:2250//

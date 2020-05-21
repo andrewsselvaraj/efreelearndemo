@@ -18,7 +18,7 @@ final String url = "http://localhost:2222/loginUser";
 	    uriVariables.put("userName", "shirly");
 	    uriVariables.put("password", "shirly");
 	    
-	    URI result =  restTemplate.postForLocation(url, UserVONew.class, uriVariables);
+	    URI result =  restTemplate.postForLocation(url, User.class, uriVariables);
 	    System.out.println(result);	 
 	}
 	

@@ -3,7 +3,7 @@ package com.efreelearn.mvccontroller;
 import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
-
+ 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,10 +13,12 @@ import org.springframework.web.client.RestTemplate;
 
 import com.efreelearn.vo.QuestionAnswersResponse;
 import com.efreelearn.vo.QuestionResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Controller
 public class IndexControllerNew {
-
+	 private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	@RequestMapping("/inNew")
 	public String home(Map<String, Object> model) {
 		model.put("message", "HowToDoInJava Reader !!");
@@ -67,14 +69,21 @@ public class IndexControllerNew {
 	@RequestMapping(value = "/getAllQuestionAnswersNew", method =  RequestMethod.GET)
 	private String validateUser(Map<String, Object> model)
 	{
+		logger.info("ANDREW ERROR");
+		System.out.println("ANDREW ERROR SOP");
+		logger.trace("A TRACE Message");
+		logger.debug("A DEBUG Message");
+		logger.info("An INFO Message");
+		logger.warn("A WARN Message");
+		logger.error("An ERROR Message");
 	String url = "https://spring-jdbc.cfapps.io/findAllQuestionwithAnswerforAll";
 	RestTemplate restTemplate = new RestTemplate();
 
 
 	QuestionAnswersResponse[] qa=restTemplate.getForObject(url, QuestionAnswersResponse[].class);
-	System.out.println("qqq 111"+qa.length);
+	System.out.println("I AM SOP qqq 111"+qa.length);
 	QuestionResponse q= qa[0].getQuestion();
-	System.out.println("aaaa 111"+q.getQuestionName());
+	System.out.println("I AM SOP aaaa 111"+q.getQuestionName());
 	model.put("allquestionAnswers", qa);
 	return "allquestionAnswers";
 	}

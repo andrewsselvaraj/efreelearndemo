@@ -14,12 +14,19 @@
         <version>1.5.1.RELEASE</version>
     </parent>
 
-    <properties>
-        <java.version>1.8</java.version>
+
+    
+    	<properties>
+    	<java.version>1.8</java.version>
          <poi.version>3.11</poi.version>
-    </properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<spring-cloud.version>Dalston.SR1</spring-cloud.version>
+	</properties>
 
     <dependencies>
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -29,6 +36,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <!-- Eureka starts -->
+        		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka-server</artifactId>
+		</dependency>
+		<!-- Eurekc end -->
         <!-- Tomcat Embed Newly added-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -112,10 +125,26 @@
   <scope>test</scope>
 </dependency>
 <!-- for Security END-->
+
+
         
        
 
     </dependencies>
+
+<!-- Cloud -->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+<!-- Cloud -->
 
     <build>
         <plugins>

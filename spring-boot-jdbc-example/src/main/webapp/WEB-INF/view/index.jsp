@@ -1,15 +1,31 @@
-<!DOCTYPE html>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<html lang="en">
+<%@ page contentType="text/html;charset=UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+ 
+<html>
+<head>
+    <title>Add Employee Form</title>
+</head>
+ 
 <body>
-	<div>
-		<div>
-			<h1>Spring Boot JSP Example</h1>
-			<h2>Hello andrrrreeee in VIEW${message}</h2>
-			https://howtodoinjava.com/spring-boot2/logging/spring-boot-logging-configurations/
-			Click on this <strong><a href="next">link</a></strong> to visit another page.
-			Click on this <strong><a href="initiateLogin">initiateLogin</a></strong> to visit another page.
-		</div>
-	</div>
+
+    <br/>
+    <form:form method="post" action="validateUserandLogin" modelAttribute="user">
+        <table>
+            <tr>
+                <td><spring:message code="firstName" text="First Name" /></td>
+                <td><form:input path="username" /></td>
+            </tr>
+            <tr>
+                <td><spring:message code="lbl.lastName" text="Last Name" /></td>
+                <td><form:input path="password" /></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2"><input type="submit" value="Submit"/></td>
+            </tr>
+
+        </table>
+    </form:form>
 </body>
 </html>

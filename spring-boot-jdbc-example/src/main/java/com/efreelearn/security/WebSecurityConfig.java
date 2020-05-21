@@ -10,11 +10,15 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
+	
    @Override
    protected void configure(HttpSecurity http) throws Exception {
+	   http.csrf().disable();
+	   /*
       http
          .authorizeRequests()
-            .antMatchers("/", "/index","/findAllQuestionwithAnswerforAll","/findAllQuestionwithAnswerforAll").permitAll()
+            .antMatchers("/", "/index","/index2.jsp","/findAllQuestionwithAnswerforAll","/index2").permitAll()
             .anyRequest().authenticated()
             .and()
          .formLogin()
@@ -23,6 +27,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .and()
             .logout()
             .permitAll();
+            */
             
    }
    @Autowired
