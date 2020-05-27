@@ -1,4 +1,4 @@
-package com.efreelearn.mvccontroller;
+package com.efreelearn.questionanswer.mvccontroller;
 
 import java.util.ArrayList;
 import java.util.List;
