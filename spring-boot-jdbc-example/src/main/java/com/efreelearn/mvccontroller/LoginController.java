@@ -2,11 +2,15 @@ package com.efreelearn.mvccontroller;
 
 import java.net.URI;
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -29,6 +33,7 @@ import org.springframework.web.client.RestTemplate;
 import com.efreelearn.vo.QuestionAnswersResponse;
 import com.efreelearn.vo.QuestionResponse;
 import com.efreelearn.vo.User;
+
 
 
 @Controller
@@ -137,7 +142,7 @@ public class LoginController {
 
 	
 	
-	@RequestMapping(value = "initiateLogin", method =  RequestMethod.GET)
+	
 
 	public String initiateLogin(Model model)	
 	{	
@@ -151,7 +156,39 @@ public class LoginController {
 		//model.getClass().getClasses().length();
 		return "login";
 	}
+	
+	@RequestMapping(value = "session", method =  RequestMethod.GET)
+	public String home(Model model, HttpSession session) {
+		@SuppressWarnings("unchecked")
+		List<String> messages = (List<String>) session.getAttribute("MY_SESSION_MESSAGES");
 
+		if (messages == null) {
+			messages = new ArrayList<>();
+		}
+		model.addAttribute("sessionMessages", messages);
+
+		return "index";
+	}
+
+ 
+	@RequestMapping(value = "persistMessage", method =  RequestMethod.GET)
+	public String persistMessage(@RequestParam("msg") String msg, HttpServletRequest request) {
+		@SuppressWarnings("unchecked")
+		List<String> msgs = (List<String>) request.getSession().getAttribute("MY_SESSION_MESSAGES");
+		if (msgs == null) {
+			msgs = new ArrayList<>();
+			request.getSession().setAttribute("MY_SESSION_MESSAGES", msgs);
+		}
+		msgs.add(msg);
+		request.getSession().setAttribute("MY_SESSION_MESSAGES", msgs);
+		return "redirect:/";
+	}
+ 
+	@RequestMapping(value = "destroy", method =  RequestMethod.GET)
+	public String destroySession(HttpServletRequest request) {
+		request.getSession().invalidate();
+		return "redirect:/";
+	}
 
  
 

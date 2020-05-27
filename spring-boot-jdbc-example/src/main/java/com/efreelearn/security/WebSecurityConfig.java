@@ -32,6 +32,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
    }
    @Autowired
    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+	   //https://stackoverflow.com/questions/53340787/put-user-in-httpsession-with-spring-security-default-login-and-authenticate
+	   /*how to validate session in spring security*/
 	   /*
       auth
          .inMemoryAuthentication()

@@ -15,7 +15,7 @@ import com.efreelearn.vo.QuestionAnswersResponse;
 import com.efreelearn.vo.QuestionResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+//https://aws.amazon.com/blogs/devops/deploying-a-spring-boot-application-on-aws-using-aws-elastic-beanstalk/
 @Controller
 public class IndexControllerNew {
 	 private final Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -69,12 +69,12 @@ public class IndexControllerNew {
 	@RequestMapping(value = "/getAllQuestionAnswersNew", method =  RequestMethod.GET)
 	private String validateUser(Map<String, Object> model)
 	{
-		logger.info("ANDREW ERROR");
+		logger.info("ANDREWS ERROR");
 		System.out.println("ANDREW ERROR SOP");
-		logger.trace("A TRACE Message");
-		logger.debug("A DEBUG Message");
-		logger.info("An INFO Message");
-		logger.warn("A WARN Message");
+		logger.trace("A ANDREWSTRACE Message");
+		logger.debug("A ANDREWSDEBUG Message");
+		logger.info("An ANDREWSINFO Message");
+		logger.warn("A ANDREWS WARN Message");
 		logger.error("An ERROR Message");
 	String url = "https://spring-jdbc.cfapps.io/findAllQuestionwithAnswerforAll";
 	RestTemplate restTemplate = new RestTemplate();

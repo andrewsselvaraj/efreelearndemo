@@ -5,6 +5,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -20,6 +22,7 @@ import com.efreelearn.model.QuestionAnswers;
 
 @Repository
 public class QuestionAnswersRepository {
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -293,7 +296,9 @@ public List<QuestionAnswers> findAllQuesAansbySchoolIDSubjecIDClassID(String pk_
     
     public String insertQuestionAnswers(QuestionAnswers questionAnswers)
     {
-    	return "";
+ 
+    	logger.info(""+questionAnswers.getAnswers() + questionAnswers.getClass() + questionAnswers.getQuestion());
+    	return ""+questionAnswers.getAnswers() + questionAnswers.getClass() + questionAnswers.getQuestion();
     }
 
  

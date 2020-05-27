@@ -3,7 +3,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
   http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.mkyong</groupId>
     <artifactId>spring-boot-jdbc</artifactId>
     <version>1.0</version>
@@ -11,7 +10,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.1.RELEASE</version>
+        <version>2.0.3.RELEASE</version>
     </parent>
 
 
@@ -37,10 +36,12 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <!-- Eureka starts -->
+        <!-- 
         		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka-server</artifactId>
-		</dependency>
+			
+		</dependency> -->
 		<!-- Eurekc end -->
         <!-- Tomcat Embed Newly added-->
 		<dependency>
@@ -124,6 +125,15 @@
   <artifactId>spring-security-test</artifactId>
   <scope>test</scope>
 </dependency>
+
+		<dependency>
+			<groupId>org.springframework.session</groupId>
+			<artifactId>spring-session-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.session</groupId>
+			<artifactId>spring-session-jdbc</artifactId>
+		</dependency>
 <!-- for Security END-->
 
 
@@ -138,7 +148,7 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>${spring-cloud.version}</version>
+				<version>Finchley.RELEASE</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
