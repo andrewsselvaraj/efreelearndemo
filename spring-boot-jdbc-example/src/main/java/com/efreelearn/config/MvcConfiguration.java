@@ -1,4 +1,4 @@
-package com.efreelearn.mvccontroller;
+package com.efreelearn.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
