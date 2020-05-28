@@ -66,5 +66,5 @@ String contextPath=request.getContextPath();
         </header><!--//header-->
         
         <!-- ******NAV****** -->
-<?php include('navigation.php'); ?>
+<jsp:include page="footer.jsp" />  
         <!--//main-nav-->
