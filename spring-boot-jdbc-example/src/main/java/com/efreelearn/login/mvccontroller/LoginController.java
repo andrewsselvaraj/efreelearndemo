@@ -111,7 +111,7 @@ public class LoginController {
 		      BindingResult result, ModelMap model)	
 	
 	{
-		final String url = "https://spring-jdbc.cfapps.io/loginUser";		
+		final String url = "https://spring-jdbc.cfapps.io/validateUser";		
 	    
 	    RestTemplate restTemplate = new RestTemplate();
 	    
@@ -126,9 +126,40 @@ public class LoginController {
 		//model.getClass().getClasses().length();
 		log.error("model employee"+user.toString());
 		
-		 String url1 = "https://spring-jdbc.cfapps.io/findAllQuestionwithAnswerforAll";
-		 restTemplate = new RestTemplate();
+		String url1 = "https://spring-jdbc.cfapps.io/findAllQuesAansbySchoolIDSubjecIDClassID?";
+		url1 = url1+"pk_SubjectId={pk_SubjectId}&";
+		url1 = url1+"fk_SchoolId={fk_SchoolId}&";
+		url1 = url1+"classid={classid}";
+		
+		restTemplate = new RestTemplate();
+		
+		public ResponseEntity<Object> addEmployee(@RequestBody Employee employee) throws Exception 
+		{       
+		    //
+		}
+		
+		Map<String, Object> map = new HashMap<>();
+		map.put("userId", 1);
+		map.put("title", "Spring Boot 101");
+		map.put("body", "A powerful tool for building web apps.");
 
+		// build the request
+		HttpEntity<Map<String, Object>> entity = new HttpEntity<>(map, headers);
+
+		// send POST request
+		ResponseEntity<String> response = restTemplate.postForEntity(url, entity, String.class);
+
+ 
+		
+		// String url1 = "https://spring-jdbc.cfapps.io/findAllQuesAansbySchoolIDSubjecIDClassID";
+		//String url1 = "https://spring-jdbc.cfapps.io/findAllQuestionwithAnswerforAll";
+		url1 = "https://spring-jdbc.cfapps.io/findAllQuestionwithAnswerforAll";
+		 restTemplate = new RestTemplate();
+		 
+		 restTemplate = new RestTemplate();
+		 
+		 
+		 //findAllQuesAansbySchoolIDSubjecIDClassID(String pk_SubjectId,String fk_SchoolId,String classid) {
 
 		QuestionAnswersResponse[] qa=restTemplate.getForObject(url1, QuestionAnswersResponse[].class);
 		System.out.println("I AM SOP qqq 111"+qa.length);
