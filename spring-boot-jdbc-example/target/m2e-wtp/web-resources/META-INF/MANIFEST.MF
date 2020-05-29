@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: spring-boot-jdbc
+Implementation-Version: 1.0
+Built-By: shiju
+Implementation-Vendor-Id: com.mkyong
+Build-Jdk: 1.8.0_121
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/spring-boot-jdbc
+Created-By: Maven Integration for Eclipse
+
