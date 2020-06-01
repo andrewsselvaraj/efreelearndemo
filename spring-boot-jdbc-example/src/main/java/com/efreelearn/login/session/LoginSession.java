@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class LoginSession {
 
 
-	@RequestMapping(value = "/sessionmonitor", method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = "/sessionmonitor1", method = {RequestMethod.GET, RequestMethod.POST})
 	public String home(Model model, HttpSession session) {
 		@SuppressWarnings("unchecked")
 		List<String> messages = (List<String>) session.getAttribute("MY_SESSION_MESSAGES");
@@ -32,7 +32,7 @@ public class LoginSession {
 	}
 
 
-	@RequestMapping(value = "/persistMessage",  method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = "/persistMessage1",  method = {RequestMethod.GET, RequestMethod.POST})
 	public String persistMessage(@RequestParam("msg") String msg, HttpServletRequest request) {
 		@SuppressWarnings("unchecked")
 		List<String> msgs = (List<String>) request.getSession().getAttribute("MY_SESSION_MESSAGES");
@@ -45,7 +45,7 @@ public class LoginSession {
 		return "redirect:/";
 	}
 
-	@PostMapping("/destroy")
+	@PostMapping("/destroy1")
 	public String destroySession(HttpServletRequest request) {
 		request.getSession().invalidate();
 		return "redirect:/";
