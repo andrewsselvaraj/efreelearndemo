@@ -132,22 +132,10 @@ public class LoginController {
 		url1 = url1+"classid={classid}";
 		
 		restTemplate = new RestTemplate();
-		
-		public ResponseEntity<Object> addEmployee(@RequestBody Employee employee) throws Exception 
-		{       
-		    //
-		}
-		
-		Map<String, Object> map = new HashMap<>();
-		map.put("userId", 1);
-		map.put("title", "Spring Boot 101");
-		map.put("body", "A powerful tool for building web apps.");
 
-		// build the request
-		HttpEntity<Map<String, Object>> entity = new HttpEntity<>(map, headers);
 
-		// send POST request
-		ResponseEntity<String> response = restTemplate.postForEntity(url, entity, String.class);
+		
+
 
  
 		
