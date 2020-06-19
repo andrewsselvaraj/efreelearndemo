@@ -76,7 +76,7 @@ public class IndexControllerNew {
 		logger.info("An ANDREWSINFO Message");
 		logger.warn("A ANDREWS WARN Message");
 		logger.error("An ERROR Message");
-	String url = "https://spring-jdbc.cfapps.io/findAllQuestionwithAnswerforAll";
+	String url = "https://efreelearn.cfapps.io/findAllQuestionwithAnswerforAll";
 	RestTemplate restTemplate = new RestTemplate();
 
 

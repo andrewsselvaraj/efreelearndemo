@@ -26,7 +26,7 @@ public class QuestionAnswerInfoController {
 	@RequestMapping(value = "/getAllQuestionAnswers", method =  RequestMethod.GET)
 	private String validateUser(Map<String, Object> model)
 	{
-	String url = "https://spring-jdbc.cfapps.io/findAllQuestionwithAnswerforAll";
+	String url = "https://efreelearn.cfapps.io/findAllQuestionwithAnswerforAll";
 	RestTemplate restTemplate = new RestTemplate();
 
 
@@ -42,7 +42,7 @@ public class QuestionAnswerInfoController {
 	@RequestMapping(value = "/postQuestionAndAnswers", method =  RequestMethod.POST)
 	private String postQuestionAndAnswers(Map<String, Object> model)
 	{
-	String url = "https://spring-jdbc.cfapps.io/postQuestionAndAnswers";
+	String url = "https://efreelearn.cfapps.io/postQuestionAndAnswers";
 	RestTemplate restTemplate = new RestTemplate();
 	
 	

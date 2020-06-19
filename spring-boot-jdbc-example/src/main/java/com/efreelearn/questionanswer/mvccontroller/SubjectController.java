@@ -80,7 +80,7 @@ public class SubjectController {
 		subjectInfo.setStatus("1");
 		subjectInfo.setCreatedby("model"+model.get("createdby"));
 		subjectInfo.setDescription("model"+model.get("description")+ "description");
-		String url = "http://spring-jdbc.cfapps.io/postSubject";
+		String url = "http://efreelearn.cfapps.io/postSubject";
 		RestTemplate restTemplate = new RestTemplate();
 	
 		SubjectInfo unmarshalledSubject = restTemplate.postForObject(url, subjectInfo, SubjectInfo.class);

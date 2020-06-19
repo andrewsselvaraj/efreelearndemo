@@ -11,7 +11,7 @@ import com.efreelearn.vo.QuestionResponse;
 public class QuestionandAnswerInfo {
 
 	public static void main(String[] args) {
-		String url = "https://spring-jdbc.cfapps.io/findAllQuestionwithAnswerforAll";
+		String url = "https://efreelearn.cfapps.io/findAllQuestionwithAnswerforAll";
 		RestTemplate restTemplate = new RestTemplate();
 
 

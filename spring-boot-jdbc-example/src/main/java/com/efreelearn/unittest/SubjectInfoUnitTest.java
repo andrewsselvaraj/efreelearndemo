@@ -15,7 +15,7 @@ public class SubjectInfoUnitTest {
 
 	public static void main(String[] args) {
 
-		String url = "http://spring-jdbc.cfapps.io/postSubject";
+		String url = "http://efreelearn.cfapps.io/postSubject";
 		RestTemplate restTemplate = new RestTemplate();
 		
 		SubjectInfo subjectInfo = new SubjectInfo();
