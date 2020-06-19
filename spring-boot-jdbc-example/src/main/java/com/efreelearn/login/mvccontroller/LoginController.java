@@ -16,6 +16,7 @@ import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -33,7 +34,12 @@ import org.springframework.web.client.RestTemplate;
 import com.efreelearn.vo.QuestionAnswersResponse;
 import com.efreelearn.vo.QuestionResponse;
 import com.efreelearn.vo.User;
-
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.client.RestTemplate;
 
 
 @Controller
@@ -72,7 +78,7 @@ public class LoginController {
 		log.info("An INFO Message");
 		log.warn("A WARN Message");
 		log.error("An ERROR Message");
-	    final String uri = "https://spring-jdbc.cfapps.io/validateUser";
+	    final String uri = "https://efreelearn.cfapps.io/validateUser";
 	    
 	    RestTemplate restTemplate = new RestTemplate();
 	    
@@ -90,7 +96,7 @@ public class LoginController {
 	@RequestMapping(value = "/validateUserPostforObjectNew1", method =  RequestMethod.GET)
 	private String validateUserPostforObject(@RequestParam("userName") String userName,@RequestParam("password") String password)
 	{
-	    final String url = "https://spring-jdbc.cfapps.io/validateUserDummy";
+	    final String url = "https://efreelearn.cfapps.io/validateUserDummy";
 	    
 	    RestTemplate restTemplate = new RestTemplate();
 	    
@@ -111,7 +117,7 @@ public class LoginController {
 		      BindingResult result, ModelMap model)	
 	
 	{
-		final String url = "https://spring-jdbc.cfapps.io/validateUser";		
+		final String url = "https://efreelearn.cfapps.io/validateUser";		
 	    
 	    RestTemplate restTemplate = new RestTemplate();
 	    
@@ -125,13 +131,45 @@ public class LoginController {
 		System.out.println("password"+password);
 		//model.getClass().getClasses().length();
 		log.error("model employee"+user.toString());
+
 		
-		String url1 = "https://spring-jdbc.cfapps.io/findAllQuesAansbySchoolIDSubjecIDClassID?";
+		
+		String url1 = "https://efreelearn.cfapps.io/findAllQuesAansbySchoolIDSubjecIDClassID?";
 		url1 = url1+"pk_SubjectId={pk_SubjectId}&";
 		url1 = url1+"fk_SchoolId={fk_SchoolId}&";
 		url1 = url1+"classid={classid}";
 		
 		restTemplate = new RestTemplate();
+		
+		Map<String, String> map = new HashMap<String, String>();
+		//m.put(key, value)
+		map.put("userName", userName);
+		map.put("password", password);	
+		
+		try
+		{
+		
+		//URI u =restTemplate.postForLocation(url, HttpMethod.POST, map);
+		//System.out.println("getUserInfo()"+u.getUserInfo());
+		
+		HttpHeaders headers = new HttpHeaders();
+		MultiValueMap<String, String> bodyMap = new LinkedMultiValueMap<>();
+		bodyMap.add("userName", userName);
+		bodyMap.add("password", password);	
+	    HttpEntity<MultiValueMap<String, String>> requestEntity = new HttpEntity<>(bodyMap, headers);
+	    String result1 = restTemplate.postForObject(url, requestEntity, String.class);
+	    
+	    System.out.println("result1 aaaaa"+result1);
+		}
+		catch(Exception e)
+		{
+			System.out.println("getUserInfo()"+e.getStackTrace()+""+e.getMessage());
+		}
+				
+
+	
+		
+			
 
 
 		
@@ -139,9 +177,9 @@ public class LoginController {
 
  
 		
-		// String url1 = "https://spring-jdbc.cfapps.io/findAllQuesAansbySchoolIDSubjecIDClassID";
-		//String url1 = "https://spring-jdbc.cfapps.io/findAllQuestionwithAnswerforAll";
-		url1 = "https://spring-jdbc.cfapps.io/findAllQuestionwithAnswerforAll";
+		// String url1 = "https://efreelearn.cfapps.io/findAllQuesAansbySchoolIDSubjecIDClassID";
+		//String url1 = "https://efreelearn.cfapps.io/findAllQuestionwithAnswerforAll";
+		url1 = "https://efreelearn.cfapps.io/findAllQuestionwithAnswerforAll";
 		 restTemplate = new RestTemplate();
 		 
 		 restTemplate = new RestTemplate();
@@ -149,7 +187,7 @@ public class LoginController {
 		 
 		 //findAllQuesAansbySchoolIDSubjecIDClassID(String pk_SubjectId,String fk_SchoolId,String classid) {
 
-		QuestionAnswersResponse[] qa=restTemplate.getForObject(url1, QuestionAnswersResponse[].class);
+		 QuestionAnswersResponse[] qa=restTemplate.getForObject(url1, QuestionAnswersResponse[].class);
 		System.out.println("I AM SOP qqq 111"+qa.length);
 		QuestionResponse q= qa[0].getQuestion();
 		System.out.println("I AM SOP aaaa 111"+q.getQuestionName());
