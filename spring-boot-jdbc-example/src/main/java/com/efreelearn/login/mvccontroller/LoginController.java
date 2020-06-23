@@ -113,7 +113,7 @@ public class LoginController {
 	    return "index";
 	}
 	
-	@RequestMapping(value = "/addtodo", method = RequestMethod.POST)
+	@RequestMapping(value = "/validateUserandLogin", method = RequestMethod.POST)
     public String addTodo(@ModelAttribute("user")User user, 
 		      BindingResult result, ModelMap model) {
 		
@@ -122,7 +122,7 @@ public class LoginController {
 
 		//final String url = "https://efreelearn.cfapps.io/addtodorest"
 
-		final String url = "http://localhost:5000/addtodorest";
+		final String url = "http://localhost:5000/validateUserandLogin";
 	    
 	    RestTemplate restTemplate = new RestTemplate();
 	    
@@ -157,7 +157,7 @@ public class LoginController {
 		
 	}
 	
-	@RequestMapping(value ="validateUserandLogin", method = RequestMethod.POST)	
+	@RequestMapping(value ="validateUserandLoginold", method = RequestMethod.POST)	
 	public String validateUserandLogin(@ModelAttribute("user")User user, 
 		      BindingResult result, ModelMap model)	
 	

@@ -49,7 +49,7 @@ public class LoginInfoRestController {
 	}
 	
 	@CrossOrigin(origins = "*", allowedHeaders = "*") 
-	@RequestMapping(value = "/addtodorest", method =  RequestMethod.POST)
+	@RequestMapping(value = "/validateUserandLogin", method =  RequestMethod.POST)
 	public List<UserInfo> validateUser(@RequestBody User user)
 	{
 		try
