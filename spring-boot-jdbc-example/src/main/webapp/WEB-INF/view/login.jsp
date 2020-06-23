@@ -17,4 +17,22 @@
                 </tr>
             </table>
         </form:form>
+        
+        <form:form method="POST"
+          action="/add-todo" modelAttribute="employee">
+             <table>
+                <tr>
+                    <td><form:label path="lblusername">Name add-todo</form:label></td>
+                    <td><form:input path="username"/></td>
+                </tr>
+                <tr>
+                    <td><form:label path="lblpassword">Id</form:label></td>
+                    <td><form:input path="password"/></td>
+                </tr>
 
+                <tr>
+                    <td><input type="submit" value="Submit"/></td>
+                </tr>
+            </table>
+        </form:form>
+        

@@ -31,6 +31,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
+import com.efreelearn.model.UserInfo;
 import com.efreelearn.vo.QuestionAnswersResponse;
 import com.efreelearn.vo.QuestionResponse;
 import com.efreelearn.vo.User;
@@ -110,6 +111,50 @@ public class LoginController {
 	    
 	    //System.out.println(result.getRawQuery());
 	    return "index";
+	}
+	
+	@RequestMapping(value = "/addtodo", method = RequestMethod.POST)
+    public String addTodo(@ModelAttribute("user")User user, 
+		      BindingResult result, ModelMap model) {
+		
+		
+		
+
+		//final String url = "https://efreelearn.cfapps.io/addtodorest"
+
+		final String url = "http://localhost:5000/addtodorest";
+	    
+	    RestTemplate restTemplate = new RestTemplate();
+	    
+	    UserInfo result1 = restTemplate.postForObject(url, user, UserInfo.class);
+	    
+	    System.out.println("sss"+result1.getPassword());
+	   
+
+		return "onlineExam";
+	
+		
+	}
+	
+	@RequestMapping(value = "/add-todo1", method = RequestMethod.POST)
+    public String addTodo1(@ModelAttribute("user")User user, 
+		      BindingResult result, ModelMap model) {
+		
+		
+		
+
+		final String url = "https://efreelearn.cfapps.io/validateUser";		
+	    
+	    RestTemplate restTemplate = new RestTemplate();
+	    
+	    UserInfo[] result1 = restTemplate.postForObject(url, user, UserInfo[].class);
+	    
+	    System.out.println("sss"+result1[0].getPassword());
+	   
+
+		return "onlineExam";
+	
+		
 	}
 	
 	@RequestMapping(value ="validateUserandLogin", method = RequestMethod.POST)	
@@ -247,7 +292,7 @@ public class LoginController {
 		return "redirect:/";
 	}
 
- 
+
 
 	
 }

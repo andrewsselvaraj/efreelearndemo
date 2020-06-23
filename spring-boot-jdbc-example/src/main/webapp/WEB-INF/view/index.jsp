@@ -10,7 +10,7 @@
 <body>
 
     <br/>
-    <form:form method="post" action="validateUserandLogin" modelAttribute="user">
+    <form:form method="post" action="addtodo" modelAttribute="user">
         <table>
             <tr>
                 <td><spring:message code="firstName" text="First Name" /></td>
@@ -27,5 +27,8 @@
 
         </table>
     </form:form>
+    
+        
+    
 </body>
 </html>

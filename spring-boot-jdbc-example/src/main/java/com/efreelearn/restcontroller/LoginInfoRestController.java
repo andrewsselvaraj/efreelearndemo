@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.efreelearn.dao.LoginRepository;
 import com.efreelearn.model.UserInfo;
+import com.efreelearn.vo.User;
 
 
 
@@ -30,17 +32,45 @@ public class LoginInfoRestController {
 	{
 		try
 		{
+			System.out.println("Welcome");
 		List<UserInfo> userList=loginRepository.validateUser(userName, password);
+		if(userList!=null && userList.size() > 0)
+		{
+			System.out.println(userList.get(0).getName());
+		}
 		return userList;
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
+			System.out.println("getUserInfo()"+e.getStackTrace()+""+e.getMessage());
 		}
 		return null;
 	}
 	
-
+	@CrossOrigin(origins = "*", allowedHeaders = "*") 
+	@RequestMapping(value = "/addtodorest", method =  RequestMethod.POST)
+	public List<UserInfo> validateUser(@RequestBody User user)
+	{
+		try
+		{
+			System.out.println("Welcome");
+		List<UserInfo> userList=loginRepository.validateUser(user.getUsername(), user.getPassword());
+		if(userList!=null && userList.size() > 0)
+		{
+			System.out.println(userList.get(0).getName());
+		}
+		return userList;
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+			System.out.println("getUserInfo()"+e.getStackTrace()+""+e.getMessage());
+		}
+		return null;
+	}
+	
+	
 	
 	@CrossOrigin(origins = "*", allowedHeaders = "*") 
 	@RequestMapping(value = "/validateUserDummy", method =  RequestMethod.GET)

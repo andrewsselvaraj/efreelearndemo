@@ -16,6 +16,7 @@ public class LoginRepository {
     private JdbcTemplate jdbcTemplate;
 
     public List<UserInfo> validateUser(String userName,String password) {
+   	 System.out.println("result1 aaaaa"+  userName + password);
    	 List<UserInfo> result=null;
    	try
    	{
@@ -31,8 +32,9 @@ public class LoginRepository {
    	catch(Exception e)
    	{
    		e.printStackTrace();
+   		System.out.println("getUserInfo()"+e.getStackTrace()+""+e.getMessage());
    	}
-
+	 System.out.println("Query aaaaa"+  userName + password);
        return result;
 
    }
