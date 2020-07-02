@@ -49,8 +49,8 @@ public class LoginInfoRestController {
 	}
 	
 	@CrossOrigin(origins = "*", allowedHeaders = "*") 
-	@RequestMapping(value = "/validateUserandLogin", method =  RequestMethod.POST)
-	public List<UserInfo> validateUser(@RequestBody User user)
+	@RequestMapping(value = "/validateUserandLoginRest", method =  RequestMethod.POST)
+	public UserInfo validateUser(@RequestBody User user)
 	{
 		try
 		{
@@ -59,8 +59,9 @@ public class LoginInfoRestController {
 		if(userList!=null && userList.size() > 0)
 		{
 			System.out.println(userList.get(0).getName());
+			return userList.get(0);
 		}
-		return userList;
+		
 		}
 		catch(Exception e)
 		{

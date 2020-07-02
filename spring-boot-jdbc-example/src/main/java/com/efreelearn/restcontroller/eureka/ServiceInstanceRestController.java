@@ -30,7 +30,7 @@ public List<ServiceInstance> serviceInstanceApplicationAll()
 
 	this.discoveryClient.getServices().forEach(System.out::println);
 	
-	return this.discoveryClient.getInstances("Spring Sample Application");
+	return this.discoveryClient.getInstances("booknew");
 
 }
 }

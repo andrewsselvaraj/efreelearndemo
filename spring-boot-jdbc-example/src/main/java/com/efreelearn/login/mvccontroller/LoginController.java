@@ -112,6 +112,34 @@ public class LoginController {
 	    //System.out.println(result.getRawQuery());
 	    return "index";
 	}
+	@RequestMapping(value = "/validateUserandLoginNew", method = RequestMethod.POST)
+    public UserInfo addTodo1(@ModelAttribute("user")User user, 
+		      BindingResult result, ModelMap model) {
+		
+		
+		
+
+		//final String url = "https://efreelearn.cfapps.io/addtodorest"
+
+		final String url = "https://efreelearn.cfapps.io/validateUserandLoginRest";
+	    
+	    RestTemplate restTemplate = new RestTemplate();
+	    
+	    UserInfo result1 = restTemplate.postForObject(url, user, UserInfo.class);
+	    
+	    	if(result1!=null)
+	    	{
+	    
+	    		 System.out.println("sss"+result1.getName());
+	    
+	    System.out.println("ss78979797s"+result1.toString());
+	    	}
+	    	else
+	    	{
+	    		 System.out.println("sss ");
+	    	}
+	    	return result1;
+	}
 	
 	@RequestMapping(value = "/validateUserandLogin", method = RequestMethod.POST)
     public String addTodo(@ModelAttribute("user")User user, 
@@ -122,40 +150,46 @@ public class LoginController {
 
 		//final String url = "https://efreelearn.cfapps.io/addtodorest"
 
-		final String url = "http://localhost:5000/validateUserandLogin";
+		final String url = "https://efreelearn.cfapps.io/validateUserandLoginRest";
 	    
 	    RestTemplate restTemplate = new RestTemplate();
 	    
 	    UserInfo result1 = restTemplate.postForObject(url, user, UserInfo.class);
 	    
-	    System.out.println("sss"+result1.getPassword());
+	    	if(result1!=null)
+	    	{
+	    
+	    		 System.out.println("sss"+result1.getName());
+	    
+	    System.out.println("ss78979797s"+result1.toString());
+	    	}
+	    	else
+	    	{
+	    		 System.out.println("sss ");
+	    	}
+	    
+	  //  @RequestParam("pk_SchoolId") String fk_schoolid,@RequestParam("classid") String classid
+	    
+		String url1 = "https://efreelearn.cfapps.io/findAllQuesAansbySchoolIDClassID?pk_SchoolId="+result1.getFk_school_id()+"&classid="+result1.getClassid();
+		 restTemplate = new RestTemplate();
+		 
+
+		 
+		 
+		 //findAllQuesAansbySchoolIDSubjecIDClassID(String pk_SubjectId,String fk_SchoolId,String classid) {
+
+		 QuestionAnswersResponse[] qa=restTemplate.getForObject(url1, QuestionAnswersResponse[].class);
+		System.out.println("I AM SOP qqq 111"+qa.length);
+		//QuestionResponse q= qa[0].getQuestion();
+		//System.out.println("I AM SOP aaaa 111"+q.getQuestionName());
+		model.put("allquestionAnswers", qa);
 	   
 
 		return "onlineExam";
 	
 		
 	}
-	
-	@RequestMapping(value = "/add-todo1", method = RequestMethod.POST)
-    public String addTodo1(@ModelAttribute("user")User user, 
-		      BindingResult result, ModelMap model) {
-		
-		
-		
 
-		final String url = "https://efreelearn.cfapps.io/validateUser";		
-	    
-	    RestTemplate restTemplate = new RestTemplate();
-	    
-	    UserInfo[] result1 = restTemplate.postForObject(url, user, UserInfo[].class);
-	    
-	    System.out.println("sss"+result1[0].getPassword());
-	   
-
-		return "onlineExam";
-	
-		
-	}
 	
 	@RequestMapping(value ="validateUserandLoginold", method = RequestMethod.POST)	
 	public String validateUserandLogin(@ModelAttribute("user")User user, 
