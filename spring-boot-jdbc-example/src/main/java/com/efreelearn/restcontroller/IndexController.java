@@ -2,6 +2,7 @@ package com.efreelearn.restcontroller;
 
 import java.util.Map;
 
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.efreelearn.vo.User;
 
 @Controller
+@EnableAspectJAutoProxy  
 public class IndexController {
 
 	@RequestMapping("/")

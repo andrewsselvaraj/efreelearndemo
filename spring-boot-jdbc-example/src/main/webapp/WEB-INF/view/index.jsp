@@ -7,7 +7,7 @@
 
 <html>
 <head>
-  <title>Bootstrap Example</title>
+  <title>EfreeLearn</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -16,10 +16,10 @@
 </head>
  
 <body>
-
-    <br/>
+		<h2>EfreeLearn</h2>
+    
     <form:form method="post" action="validateUserandLogin" modelAttribute="user">
-        <table>
+        <table class="table" border="1" align="center">
             <tr>
                 <td><spring:message code="firstName" text="First Name" /></td>
                 <td><form:input path="username" /></td>
@@ -30,7 +30,8 @@
             </tr>
             
             <tr>
-                <td colspan="2"><input type="submit" value="Submit"/></td>
+                <td ><input type="submit" value="Submit"/></td>
+                <td ><input type="reset" value="Cancel"/></td>
             </tr>
 
         </table>
