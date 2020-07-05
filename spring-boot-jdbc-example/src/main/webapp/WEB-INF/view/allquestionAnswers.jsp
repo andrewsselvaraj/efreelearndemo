@@ -1,9 +1,17 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
+<head>
+  <title>EfreeLearn</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
 <body>
-	<h2>Spring MVC and List Example</h2>
+	<h2>EfreeLearn</h2>
 	
-	<h2>Hello andrrrreeee in VIEW${userName}</h2>
+
 
 	<c:if test="${not empty allquestionAnswers}">
 
@@ -15,7 +23,7 @@
 				<li>${answerObject.answer}</li>
 				</ul>
 				</c:forEach>
-				<input type="submit">kkl;lk;lk;k;lkl;k;k;lk;lk;l
+				<input type="submit">
 			</c:forEach>
 		</ul>
 

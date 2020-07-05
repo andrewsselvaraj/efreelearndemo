@@ -9,6 +9,8 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
+
+
 //import com.efreelearn.routingandfilteringgateway.filters.pre.SimpleFilter;
 
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -20,7 +22,6 @@ import springfox.documentation.spring.web.plugins.Docket;
 
 
 @SpringBootApplication
-@EnableZuulProxy
 public class Application {
 	
 	   @Bean
@@ -28,12 +29,8 @@ public class Application {
 	      return new Docket(DocumentationType.SWAGGER_2).select()
 	         .apis(RequestHandlerSelectors.basePackage("com.efreelearn.restcontroller")).build();
 	   }
-	  /* 
-       @Bean
-       public SimpleFilter simpleFilter() {
-         return null;
-       }
-       */
+	  
+
     
     public static void main(String[] args) {
         ApplicationContext ctx = SpringApplication.run(Application.class, args);

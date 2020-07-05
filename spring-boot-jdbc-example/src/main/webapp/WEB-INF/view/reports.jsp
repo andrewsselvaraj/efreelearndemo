@@ -4,8 +4,8 @@
 <body>
 	<div>
 		<div>
-			<h1>Spring Boot JSP Example</h1>
-			<h2>Hello andrrrreeee in VIEW${message}</h2>
+			<h1>EfreeLearn</h1>
+
 			https://howtodoinjava.com/spring-boot2/logging/spring-boot-logging-configurations/
 			Click on this <strong><a href="next">link</a></strong> to visit another page.
 			<BR>Click on this <strong><a href="/getAllQuestionAnswersNew/">getAllQuestionAnswersNew</a></strong> to visit another page.

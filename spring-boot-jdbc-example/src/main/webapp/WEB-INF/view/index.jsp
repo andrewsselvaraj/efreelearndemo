@@ -16,10 +16,10 @@
 </head>
  
 <body>
-		<h2>EfreeLearn</h2>
+		<h2 align="center">EfreeLearn</h2>
     
     <form:form method="post" action="validateUserandLogin" modelAttribute="user">
-        <table class="table" border="1" align="center">
+        <table class="table">
             <tr>
                 <td><spring:message code="firstName" text="First Name" /></td>
                 <td><form:input path="username" /></td>
