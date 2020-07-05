@@ -11,7 +11,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
  
-<body>
+<body align="center">
 	<h2>Efreelearn </h2>
 	<c:if test="${not empty allquestionAnswers}">
 
@@ -27,5 +27,8 @@
 		</ul>
 
 	</c:if>
+	</body>
+	
+</html>	
 	
 	
