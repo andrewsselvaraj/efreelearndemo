@@ -45,7 +45,7 @@ public class Application {
         	AnnotatedType annotatedType[] =  ctx.getBean(beanName).getClass().getAnnotatedInterfaces();
         	for ( int i=0;i<annotatedType.length;i++ )
         	{
-        	System.out.println( i+" "+annotatedType[i].toString() );
+        	//System.out.println( i+" "+annotatedType[i].toString() );
         	}
 
         }

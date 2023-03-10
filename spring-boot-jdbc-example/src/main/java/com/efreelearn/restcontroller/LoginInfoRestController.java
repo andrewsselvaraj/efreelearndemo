@@ -32,7 +32,7 @@ public class LoginInfoRestController {
 	{
 		try
 		{
-			System.out.println("Welcome");
+			//System.out.println("Welcome");
 		List<UserInfo> userList=loginRepository.validateUser(userName, password);
 		if(userList!=null && userList.size() > 0)
 		{
